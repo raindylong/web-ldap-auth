@@ -62,7 +62,7 @@ class LdapAuth(object):
 
         try:
             dn, entry = query_set[0]
-            user = EjoyUser(user)
+            user = LdapUser(user)
             for k in _LDAP_SCHEMA:
                 ldap_key = _LDAP_SCHEMA[k]
                 values = entry.get(ldap_key)
@@ -74,7 +74,7 @@ class LdapAuth(object):
         except IndexError:
             pass
 
-class EjoyUser(object):
+class LdapUser(object):
     def __init__(self, user):
         self.user = user
         self.passwd = None
