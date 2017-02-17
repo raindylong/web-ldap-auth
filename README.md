@@ -3,9 +3,13 @@ verify ldap auth through web
 
 
 (1) Install all necessary python module.
+
 (2) Modify the LDAP information in main.py.
+
 (3) Config your Nginx by the example nginx_auth.conf.
+
 (4) Test case:
+
 <code>
 test:~> curl --head -k -X POST 'https://127.0.0.1:3898/ldap/auth_web?user=test&passwd=1234'
 HTTP/1.1 200 OK
